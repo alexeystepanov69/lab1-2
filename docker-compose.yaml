@@ -5,7 +5,7 @@
 version: '3'
 services:
   mediawiki:
-    image: mediawiki
+    build: ./wiki
     restart: always
     ports:
       - 8080:80
@@ -26,3 +26,8 @@ services:
       MYSQL_USER: wikiuser
       MYSQL_PASSWORD: example
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+ 
+volumes:
+    my-wiki-db
+    my-wiki-images
+
